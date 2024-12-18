@@ -10,6 +10,7 @@ public class CrudEmployApiApplication {
 
 		SpringApplication.run(CrudEmployApiApplication.class, args);
 
+		System.out.println("Hello world!");
 	}
 
 }
