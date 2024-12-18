@@ -25,4 +25,10 @@ public class EmployeeController {
     public List<Employee> getEmployee(){
         return this.employeeService.getEmployee();
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> updateEmployeeById(@PathVariable Integer id, @RequestBody Employee updatedEmployee){
+        return  this.employeeService.updateEmployee(id, updatedEmployee);
+    }
+
 }
