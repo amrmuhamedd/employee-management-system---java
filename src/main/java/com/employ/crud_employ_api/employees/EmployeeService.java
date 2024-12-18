@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EmployeeService {
     private  final EmplyeeRepository emplyeeRepository;
@@ -18,5 +20,9 @@ public class EmployeeService {
     public ResponseEntity<Object> newEmployee(Employee employee){
         emplyeeRepository.save(employee);
         return new ResponseEntity<>(employee, HttpStatus.CREATED);
+    }
+
+    public List<Employee> getEmployee(){
+        return this.emplyeeRepository.findAll();
     }
 }
