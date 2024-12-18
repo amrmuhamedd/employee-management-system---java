@@ -31,4 +31,13 @@ public class EmployeeController {
         return  this.employeeService.updateEmployee(id, updatedEmployee);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> getEmployeeById(@PathVariable Integer id){
+        return  this.employeeService.getEmployeeById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object> deleteEmployeeById(@PathVariable Integer id){
+        return  this.employeeService.deleteEmployee(id);
+    }
 }

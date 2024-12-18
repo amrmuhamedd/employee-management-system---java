@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -32,7 +33,7 @@ public class EmployeeService {
         if(employeeOptional.isEmpty()){
             return ResponseEntity.notFound().build();
         }
-        
+
         Employee existingEmpolyee = employeeOptional.get();
         existingEmpolyee.setEmail(updatedEmployee.getEmail());
         existingEmpolyee.setName(updatedEmployee.getName());
@@ -41,5 +42,24 @@ public class EmployeeService {
 
         emplyeeRepository.save(existingEmpolyee);
         return  ResponseEntity.ok(existingEmpolyee);
+    }
+
+    public ResponseEntity<Object> getEmployeeById(Integer id){
+        Optional<Employee> employeeOptional = emplyeeRepository.findById(id);
+        if(employeeOptional.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+
+        return  ResponseEntity.ok(employeeOptional);
+    }
+
+    public ResponseEntity<Object> deleteEmployee(Integer id){
+        Optional<Employee> employeeOptional = emplyeeRepository.findById(id);
+        if(employeeOptional.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+
+        emplyeeRepository.deleteById(id);
+        return  ResponseEntity.ok(Map.of("message", "Deleted"));
     }
 }
