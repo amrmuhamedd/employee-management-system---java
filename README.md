@@ -15,6 +15,9 @@ This is a fully functional **Employee Management System** built using **Java**, 
 - **JPA/Hibernate**: Java Persistence API (JPA) with Hibernate for object-relational mapping (ORM) to interact with the PostgreSQL database.
 - **Spring Data JPA**: For easy integration with PostgreSQL and managing database operations.
 
+  
+![screencapture-documenter-getpostman-view-15215271-2sAYJ1mNGT-2024-12-19-00_44_47](https://github.com/user-attachments/assets/2b6a19bb-8bdd-4807-9841-e17f849556c4)
+
 ## Postman Collection:
 You can explore and test the API endpoints using the [Postman Collection](https://documenter.getpostman.com/view/15215271/2sAYJ1mNGT).
 
